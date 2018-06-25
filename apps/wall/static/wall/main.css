@@ -1,0 +1,123 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+} */
+
+.wrapper{
+    height: 90%;
+    margin-top:5%;
+}
+
+.registration{
+    margin-right:1%;
+    width: 36%;
+    height: 75%;
+    display: inline-block;
+    background-color: rgb(23, 67, 148);
+    vertical-align: top;
+    border-radius: 7px;
+}
+
+.registration>form{
+    margin: 5%;
+}
+
+
+#register{
+    border:2px solid grey;
+}
+
+.reglabel, .loginlabel{
+    color: white;
+    width: 30%;
+}
+
+form > input{
+    border-radius: 7px;
+}
+
+.signin{
+    width: 36%;
+    height: 75%;
+    display: inline-block;
+    background-color: #747bca;
+    vertical-align: top;
+    border-radius: 7px;
+}
+
+.signin > form{
+    margin: 5%;
+    height: 80%;
+}
+
+#login{
+    border:2px solid red;
+}
+
+body > nav{
+    background:linear-gradient(to right,#553d7b,white);
+}
+
+body > nav > p{
+    font-family: "Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+
+.left{
+    display: inline-block;
+    width: 30%;
+    margin-left:6%;
+    margin-top:2%;
+}
+
+.left > h3{
+    border-bottom: 2px solid black;
+}
+
+.content{
+    width: 60%;
+    display: inline-block;
+}
+
+.left > form {
+    display: inline-block;
+    width: 20%;
+    vertical-align: middle;
+    margin-left: 5%;
+} 
+
+.right{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin-top:2%;
+    margin-left: 15%;
+}
+
+.right > h3{
+    border-bottom: 2px solid black;
+}
+
+
+#msg_success, #del_success{
+    -webkit-animation: fadeOut 2s forwards;
+    animation: fadeOut 2s forwards;
+    animation-fill-mode: forwards;
+    animation-delay:2s;
+}
+
+@-webkit-keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@media only screen and (max-width:480px){
+    .registration{
+        padding-top:5%;
+    }
+}

@@ -1,0 +1,66 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      {% load static %}
+      <!-- The line above tells Django to be ready to listen for static files -->
+      <link rel="stylesheet" href="{% static 'wall/main.css' %}">
+  </head>
+  <body style="background-color:black; text-align:center;">
+     <h1 style="color:white;">Welcome to The Wall Login Page!</h1>
+    <!-- now the below part is customized on the client side, so that
+     user can see the flash message during validation process-->
+     <div class="wrapper">
+                <div class="registration">
+                        {% if messages %}
+                        {% for message in messages %}
+                        <p class="{{message.tags}}" style="color: red;">{{message}}</p>
+                        {% endfor %}
+                        {% endif %}
+                    <form action='/register' method='POST'>
+                        {% csrf_token %}
+                        <label class="reglabel" for="first_name">First Name:</label>
+                        <input type="text" class="box" name="first_name">
+                        <br>
+                        <br>
+                        <label class="reglabel" for="last_name">Last Name:</label>
+                        <input type="text" class="box" name="last_name">
+                        <br>
+                        <br>
+                        <label class="reglabel" for="email">Email:</label>
+                        <input type="text" class="box" name="email">
+                        <br>
+                        <br>
+                        <label class="reglabel" for="password">Password:</label>
+                        <input type="text" class="box" name="password">
+                        <br>
+                        <br>
+                        <label class="reglabel" for="confirm_password">Confirm Password:</label>
+                        <input type="text" class="box" name="confirm_password">
+                        <br>
+                        <br>
+                       <input id="register" type="submit" value="Register" class="btn btn-success">
+                     </form>
+                 </div>
+                 
+                 <div class="signin">
+                    <form action="/login" method='POST'>
+                        {% csrf_token %}
+                        <label class="loginlabel" for="email">Email:</label>
+                        <input type="text" class="box" name="email">
+                        
+                        <br>
+                        <br>
+                        <label class="loginlabel" for="password">Password:</label>
+                        <input type="text" class="box" name="password">
+                        
+                        <br>
+                        <br>
+                        <input id="login" type="submit" value="login" class="btn btn-primary" style="width:30%;">
+                      </form>
+                </div>
+     </div>
+  </body>
+</html>
